@@ -1,10 +1,10 @@
-use autosurgeon::{Reconcile, Hydrate};
+use autosurgeon::{Hydrate, Reconcile};
 
 // A simple contact document
 
 #[derive(Debug, Clone, Reconcile, Hydrate, PartialEq)]
 pub struct MineField {
-    grid: Grid,
+    pub grid: Grid,
 }
 
 #[derive(Debug, Clone, Reconcile, Hydrate, PartialEq)]
@@ -43,7 +43,6 @@ pub enum CellState {
 }
 
 pub const FIELD_SIZE: usize = 3;
-
 
 // This is the service definition. It looks a lot like a trait definition.
 // It defines one RPC, sync, which takes one arg, name, and returns a String.
