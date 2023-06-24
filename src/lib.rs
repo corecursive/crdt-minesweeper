@@ -49,5 +49,4 @@ pub const FIELD_SIZE: usize = 3;
 #[tarpc::service]
 pub trait Rpc {
     async fn sync(name: Vec<u8>) -> Vec<u8>;
-    async fn connect(client: ()) -> u8;
 }

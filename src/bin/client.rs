@@ -51,8 +51,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .unwrap()
         .encode();
 
-    let uuid = client.connect(context::current(), ()).await?;
-    println!("On client {}", uuid);
     loop {
         let res = client.sync(context::current(), message1to2.clone()).await?;
         let two_to_one = Message::decode(&res);
