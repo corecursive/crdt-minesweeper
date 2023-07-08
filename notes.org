@@ -56,3 +56,9 @@ each client?
 The server needs to maintain a queue of message for each client.  So when the
 clients pool the server, they get back all the messages.  Automerge should
 deterministically resolve any conflict.
+
+** [2023-07-08 Sat] Build the queuing system
+- Maintain 1 task for each client connection on the server.
+- 1 task for the server logic
+- shared ~mpsc~ channel between client connection and the server for ~SyncRequest~
+- dedicated channels between each client connection and the server for ~SyncResponse~
